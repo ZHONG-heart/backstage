@@ -33,7 +33,7 @@ export default {
                     }else{
                         store.commit('changeUserName',Response.data.result.nickName);
                         this.$router.push({path:'/index/web'})
-                    }
+                    } 
                 }
             }).catch(err=>{
 
