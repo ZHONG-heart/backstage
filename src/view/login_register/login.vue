@@ -32,7 +32,7 @@ export default {
                         alert("not found")
                     }else{
                         store.commit('changeUserName',Response.data.result.nickName);
-                        this.$router.push({path:'/index/map'})
+                        this.$router.push({path:'/index/web'})
                     }
                 }
             }).catch(err=>{
