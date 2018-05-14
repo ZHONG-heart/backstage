@@ -108,7 +108,7 @@ export default {
 }
 .handleImage{
   width:13vw;
-  /* height:110px; */
+  height:130px;
   padding: 5px;
 }
 .handleImage img{

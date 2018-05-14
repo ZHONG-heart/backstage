@@ -11,6 +11,7 @@
   </div>
 </template>
 <script>
+import {setToken} from '@/utils/auth.js'
 import {queryLogin} from '@/api/index';
 import store from '@/store'
 export default {
@@ -32,6 +33,7 @@ export default {
                         alert("not found")
                     }else{
                         store.commit('changeUserName',Response.data.result.nickName);
+                        setToken(Response.data.Token)
                         this.$router.push({path:'/index/web'})
                     } 
                 }

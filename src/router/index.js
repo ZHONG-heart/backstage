@@ -20,7 +20,7 @@ export default new Router({
     },
     {
       path:'/index',
-      component:IndexH,
+      component:resolve=>require(['@/view/group/index'],resolve),
       children:[
         {
           path:'zg',

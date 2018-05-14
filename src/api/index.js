@@ -28,24 +28,20 @@ axios.interceptors.response.use(function (response) {
   console.log('response拦截器error:'+error)
   return Promise.reject(error);
 });
-export function postAccount(account,password){
-    return axios({
-        url:url+'register',
-        method:'post',
-        data:{Account:account,Password:password}
-    })
-}
-export function queryArticleList(){
-    return axios({
-        url:url+'zgArticle/data',
-        method:'post',
-        data:{}
-    })
-}
-export function queryLogin(account,password){
-    return axios({
-        url:url+'query/login',
-        method:'get',
-        params :{Account:account,Password:password}
-    })
-}
+
+export const postAccount = (account,password)=>axios({
+    url:'register',
+    method:'post',
+    data:{Account,account,Password:password}
+})
+
+export const queryArticleList = ()=>axios({
+    url:url+'zgArticle/data',
+    method:'post',
+    data:{}
+})
+export const queryLogin = (account,password)=>axios({
+    url:url+'query/login',
+    method:'get',
+    params :{Account:account,Password:password}
+})
