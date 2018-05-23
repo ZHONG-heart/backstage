@@ -3,7 +3,7 @@
       <div id="top">
           <div id="topAuto">
               <div class="topLink leftLink">
-                  <span>主页</span>
+                  <span @click="canvasClick">主页</span>
                   <span>博客</span>
               </div>
               <div class="topLink rightLink">
@@ -17,6 +17,7 @@
   </div>
 </template>
 <script>
+import html2canvas from 'html2canvas'
 import store from '@/store'
 export default {
   name:'topHeader',
@@ -34,6 +35,11 @@ export default {
       logout(){
           store.commit('changeUserName',"")
           this.$router.push({path:'/index/Login_Register',query:{select:0}})
+      },
+      canvasClick(){
+          html2canvas(document.body).then(function(canvas){
+              console.log(canvas)
+          })
       }
   }
 }
